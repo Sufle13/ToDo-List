@@ -1,0 +1,155 @@
+*{
+    margin: 0; /*отступ*/
+    padding: 0;/*отступ от внутреннего содержимого*/
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(0deg, #2ce780, #0a64a0);
+    color: aliceblue; /*цвет текста*/
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 2rem;
+}
+
+header, form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center; /*выравнивание*/
+    align-items:center;
+}
+
+form input, form button {
+    padding: 0.5rem; /*рамки объекта*/
+    font-size: 2rem;
+    border: none;
+    background: rgb(158, 218, 203);
+    color: rgb(255, 255, 255);
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+form button {
+    color: #0a64a0;
+    background: rgb(158, 218, 203);
+    cursor: pointer; /*изменяет курсор*/
+    transition: all 0.5s ease;/*переход*/
+}
+form button:hover {
+    background: #0a64a0;
+    color:rgb(158, 218, 203);
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.todo-list {
+    min-width: 30%;
+    max-width: 100%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: rgb(158, 218, 203);
+    font-size: 2ch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+
+}
+
+.todo li {
+    flex: 1; /*способность элемента растягиваться для заполнения собой пространства*/
+}
+
+.complete-button, .trash-button {
+    color: #0a64a0;
+    background: rgb(158, 218, 203);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.complete-button {
+    background: rgb(158, 218, 203);
+    color:#17ca35;
+}
+
+.trash-button {
+    background: rgb(158, 218, 203);
+    color: #e41212;
+}
+
+.complete-button:hover {
+    background: #17ca35;
+    color:rgb(158, 218, 203);
+}
+
+.trash-button:hover {
+    background: #e41212;
+    color:rgb(158, 218, 203);
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(8rem);
+    opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;/*внешние рамки*/
+    border: none;/*границы*/
+}
+.select {
+    margin: 0.5rem;
+    position: relative;
+    overflow: hidden;/*переполняющее содержимое не отображается*/
+}
+
+select {
+    color:white;
+    background: rgb(158, 218, 203);
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after {
+    content: "\25BC";
+    position:absolute;
+    color: #0a64a0;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.select:hover::after {
+    background: #0a64a0;
+    color: rgb(158, 218, 203);
+}
